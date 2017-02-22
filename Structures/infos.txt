@@ -1,0 +1,2 @@
+C++ POO implementation of MinHeap and MaxHeap.
+MinHeap and MaxHeap classes inherit from Heap class.
