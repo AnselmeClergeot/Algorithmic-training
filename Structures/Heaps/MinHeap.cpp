@@ -17,7 +17,7 @@ MinHeap::MinHeap(const std::vector<int> &elements) : Heap(elements)
 
 void MinHeap::percolate_up(const int index)
 {
-    assert(index < m_heap_array.size());
+    assert(index < m_heap_size);
 
     if(index != 0 && m_heap_array[get_parent_index(index)] > m_heap_array[index])
     {
@@ -28,11 +28,11 @@ void MinHeap::percolate_up(const int index)
 
 void MinHeap::percolate_down(const int index)
 {
-    assert(index < m_heap_array.size());
+    assert(index < m_heap_size);
 
     int min_child {};
 
-    if(get_right_child_index(index) < m_heap_array.size())
+    if(get_right_child_index(index) < m_heap_size)
     {
         if(m_heap_array[get_left_child_index(index)] < m_heap_array[get_right_child_index(index)])
             min_child = get_left_child_index(index);
@@ -40,7 +40,7 @@ void MinHeap::percolate_down(const int index)
             min_child = get_right_child_index(index);
     }
 
-    else if(get_left_child_index(index) < m_heap_array.size())
+    else if(get_left_child_index(index) < m_heap_size)
     {
         min_child = get_left_child_index(index);
     }

@@ -24,6 +24,7 @@ class Heap {
 
     protected :
         std::vector<int> m_heap_array;
+        int m_heap_size;
 
 
         void build();
