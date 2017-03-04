@@ -1,7 +1,7 @@
 #include "node.h"
 #include <limits>
 
-const int INFINITY { 100 };
+const int INFINITY { 99999 };
 const int UNDEFINED { -1 };
 
 Node::Node(const int index) : m_index { index }, m_shortest_from_start { INFINITY }, m_previous_index { UNDEFINED }, m_leaving_edges {}, m_visited {false}

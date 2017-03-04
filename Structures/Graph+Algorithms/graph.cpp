@@ -5,7 +5,7 @@
 #include <limits>
 #include <queue>
 
-const int INFINITY { 100 };
+const int INFINITY { 99999 };
 
 Graph::Graph(const int size) : m_nodes_bag()
 {

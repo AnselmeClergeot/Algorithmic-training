@@ -17,12 +17,6 @@ int main()
     G.connect_directed(4, 5, 0);
 
     G.depth_first_search(0);
-    std::cout << std::endl;
-
-    G.set_all_unvisited();
-
-    G.breadth_first_search(0);
-
 
     return 0;
 }
