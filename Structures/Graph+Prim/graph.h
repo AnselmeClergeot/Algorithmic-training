@@ -1,6 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 #include <vector>
+#include <set>
 #include "edge.h"
 
 class Graph
@@ -18,7 +19,7 @@ private:
     std::vector<Edge> m_edges;
     unsigned int m_nodes_number;
 
-    Edge get_minimum_connection(const std::vector<int> &visited) const;
+    Edge get_minimum_connection(const std::set<int> &visited) const;
 };
 
 #endif // GRAPH_H

@@ -18,15 +18,15 @@ void Graph::connect(const int lhs_index, const int rhs_index, const int edge_wei
 
 void Graph::prim_algorithm()
 {
-    std::vector<int> visited_nodes {};
+    std::set<int> visited_nodes {};
     std::vector<Edge> mst {};
 
-    visited_nodes.push_back(0);
+    visited_nodes.emplace(0);
 
     while(visited_nodes.size() != m_nodes_number)
     {
         Edge to_add(get_minimum_connection(visited_nodes));
-        visited_nodes.push_back(to_add.get_next_index());
+        visited_nodes.emplace(to_add.get_next_index());
         mst.push_back(to_add);
     }
 
@@ -43,7 +43,7 @@ void Graph::prim_algorithm()
     std::cout << "Total cost of MST is " << total_cost;
 }
 
-Edge Graph::get_minimum_connection(const std::vector<int> &visited) const
+Edge Graph::get_minimum_connection(const std::set<int> &visited) const
 {
     Edge min_edge(UNDEFINED, UNDEFINED, INFINITY) ;
 
